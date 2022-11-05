@@ -16,9 +16,10 @@ export class EpisodeDetailsComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id}) => this.episodeDetailsService.getCurrentEpisode(id).subscribe(value=>this.CurrentEpisode=value))
-    this.CurrentEpisode.characters.map(value =>this.characters.push(this.characterService.getCharacter(value)) )
+    // this.CurrentEpisode.characters.map(value =>this.characters.push(this.characterService.getCharacter(value)) )
   }
 
 }
