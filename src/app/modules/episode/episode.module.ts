@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { EpisodeRoutingModule } from './episode-routing.module';
 import { EpisodesComponent } from './components/episodes/episodes.component';
 import { EpisodeComponent } from './components/episode/episode.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -13,7 +17,11 @@ import { EpisodeComponent } from './components/episode/episode.component';
   ],
   imports: [
     CommonModule,
-    EpisodeRoutingModule
+    EpisodeRoutingModule,
+    MatCardModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatTabsModule
   ]
 })
 export class EpisodeModule { }
