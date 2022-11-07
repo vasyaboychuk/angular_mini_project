@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { EpisodeDetailsRoutingModule } from './episode-details-routing.module';
 import { EpisodeDetailsComponent } from './components/episode-details/episode-details.component';
+import {MatCardModule} from "@angular/material/card";
+
 
 
 @NgModule({
   declarations: [
-    EpisodeDetailsComponent
+    EpisodeDetailsComponent,
+
   ],
-  imports: [
-    CommonModule,
-    EpisodeDetailsRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        EpisodeDetailsRoutingModule,
+        MatCardModule
+    ]
 })
 export class EpisodeDetailsModule { }

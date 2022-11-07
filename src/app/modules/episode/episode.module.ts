@@ -9,6 +9,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatTabsModule} from "@angular/material/tabs";
 
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatPaginatorModule} from "@angular/material/paginator";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule,
+    MatPaginatorModule
   ]
 })
 export class EpisodeModule { }

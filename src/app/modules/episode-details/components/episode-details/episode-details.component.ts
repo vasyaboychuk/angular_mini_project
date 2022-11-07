@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ICharacterInterface, IResults} from "../../../episode/inerfaces";
 import {CharacterService, EpisodeDetailsService} from "../../services";
-import {switchAll, switchMap} from "rxjs";
+import {lastValueFrom, switchAll, switchMap} from "rxjs";
 
 @Component({
   selector: 'app-episode-details',
@@ -10,7 +10,7 @@ import {switchAll, switchMap} from "rxjs";
   styleUrls: ['./episode-details.component.css']
 })
 export class EpisodeDetailsComponent implements OnInit {
-  CurrentEpisode: IResults;
+  currentEpisode: IResults;
   characters: ICharacterInterface[];
   url:string
 
@@ -20,14 +20,18 @@ export class EpisodeDetailsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => this.episodeDetailsService.getCurrentEpisode(id).subscribe(value=>{
-      this.CurrentEpisode=value
-      console.log(this.CurrentEpisode);
-    }))
-    // this.CurrentEpisode.characters.map(value => console.log(value))
-
-
-
-  }
-
+    this.activatedRoute.params.subscribe(async({id}) => {
+      this.currentEpisode  = await lastValueFrom(this.episodeDetailsService.getCurrentEpisode(id));
+      this.characters = await Promise.all(this.currentEpisode.characters.map(url =>
+        lastValueFrom(this.characterService.getCharacter(url))
+      ));
+      console.log( this.characters);
+    })}
 }
+
+
+
+
+
+
+

@@ -1,6 +1,25 @@
-<div>
-  <div>{{CurrentEpisode.id}}</div>
-  <div>{{CurrentEpisode.name}}</div>
-  <div>{{CurrentEpisode.air_date}}</div>
-  <div>{{CurrentEpisode.episode}}</div>
+<div class="wrap">
+  <div class="episode-details">
+
+    <div>{{currentEpisode.name}}</div>
+    <div>{{currentEpisode.air_date}}</div>
+    <div>{{currentEpisode.episode}}</div>
+  </div>
+  <div class="characters">
+    <mat-card class="example-card" *ngFor="let character of characters">
+      <mat-card-header>
+        <mat-card-title>Name: {{character.name}}</mat-card-title>
+        <mat-card-subtitle>Gender: {{character.gender}}</mat-card-subtitle>
+        <mat-card-subtitle>Status: {{character.status}}</mat-card-subtitle>
+        <mat-card-subtitle>Species: {{character.species}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="character.image" [alt]="character.name">
+    </mat-card>
+
+  </div>
+
+
+
 </div>
+
+

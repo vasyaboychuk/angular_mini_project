@@ -14,12 +14,12 @@ export class EpisodeService {
 
   }
 
-  getAll(): Observable<IAllData> {
-    return this.httpClient.get<IAllData>(urls.episodes);
+  getAll(page = 1): Observable<IAllData> {
+    return this.httpClient.get<IAllData>(urls.episodes, {params:{page}})
   }
-  getById(id: number): Observable<ICharacterInterface> {
-    return this.httpClient.get<ICharacterInterface>(`${urls.episodes}/${id}`)
-  }
+
+
 }
+
 
 

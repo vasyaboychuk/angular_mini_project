@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {EpisodeService} from "../../services";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+
 import {IAllData, IResults} from "../../inerfaces";
+import {ActivatedRoute, Router} from "@angular/router";
+import {map} from "rxjs";
+import {MatPaginator} from "@angular/material/paginator";
 
 
 @Component({
@@ -8,15 +11,31 @@ import {IAllData, IResults} from "../../inerfaces";
   templateUrl: './episodes.component.html',
   styleUrls: ['./episodes.component.css']
 })
-export class EpisodesComponent implements OnInit {
+export class EpisodesComponent implements OnInit ,AfterViewInit{
   episodes: IResults[];
+  totalItem:number
 
-  constructor(private episodeService:EpisodeService) {
+  @ViewChild(MatPaginator)
+  paginator:MatPaginator
 
+
+
+  constructor(private activatedRoute: ActivatedRoute,private router:Router) {
+  }
+
+  ngAfterViewInit() {
+    this.paginator.page.subscribe((page)=>
+    this.router.navigate([],{queryParams:{page:page.pageIndex+1}})
+    )
   }
 
   ngOnInit(): void {
-    this.episodeService.getAll().subscribe(value =>this.episodes=value.results)
+   this.activatedRoute.data.pipe(
+     map(value => value['data']as IAllData)
+   ).subscribe(value =>{
+     this.totalItem=value.info.pages
+     this.episodes=value.results
+   })
   }
 
 }
