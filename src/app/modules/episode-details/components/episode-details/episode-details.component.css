@@ -1,5 +1,7 @@
 .wrap{
+  margin: 0 auto;
   width: 100%;
+
 
 }
 .episode-details{
@@ -9,19 +11,28 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(233,30,99);
+  color: snow;
+  font-size: 20px;
 }
 .characters{
-  width: 100%;
+  width:100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .example-card {
-  /*max-width: 400px;*/
   max-width: 25%;
 }
 
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+span{
+  color: black;
+  font-weight: bold;
 }

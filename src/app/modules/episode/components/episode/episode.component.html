@@ -1,32 +1,4 @@
-<!--<div class="wrap">-->
-
-<!--  <div class="info">-->
-<!--    <h2>Name: {{episode.name}}</h2>-->
-<!--    <h3>Air date: {{episode.air_date}}</h3>-->
-<!--   <h3>Episode: {{episode.episode}}</h3>-->
-<!--  </div>-->
-<!--  <div class="link">-->
-<!--    <a routerLink='{{episode.id}}'>details</a>-->
-<!--  </div>-->
-
-<!--</div>-->
-
-<!--<mat-card class="example-card">-->
-<!--  <mat-card-header>-->
-
-<!--    <mat-card-title>{{episode.name}}</mat-card-title>-->
-<!--    <mat-card-subtitle>{{episode.episode}}</mat-card-subtitle>-->
-<!--  </mat-card-header>-->
-<!--  <mat-card-content>-->
-<!--    <h3>Air date: {{episode.air_date}}</h3>-->
-<!--       <h3>Episode: {{episode.episode}}</h3>-->
-<!--  </mat-card-content>-->
-<!--  <mat-card-actions>-->
-<!--    <a routerLink='{{episode.id}}'>details</a>-->
-<!--  </mat-card-actions>-->
-<!--</mat-card>-->
-
-<mat-tab-group dynamicHeight>
+<mat-tab-group >
   <mat-tab label="Long tab">
     <div class="example-large-box mat-elevation-z4">
       <div>
@@ -36,7 +8,9 @@
           <h3>Episode: {{episode.episode}}</h3>
          </div>
         <div class="link">
-          <a routerLink='{{episode.id}}'>details</a>
+<!--          <a routerLink='{{episode.id}}'>details</a>-->
+<!--          <button mat-raised-button color="primary" ><a routerLink='{{episode.id}}'>Details</a></button>-->
+          <a routerLink='{{episode.id}}'> <button mat-raised-button color="primary" >Details</button></a>
         </div>
       </div>
     </div>

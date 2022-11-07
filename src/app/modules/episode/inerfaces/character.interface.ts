@@ -17,4 +17,4 @@ export interface ICharacterInterface{
   episode:string [],
 
 }
-//TODO WRITE THE SAME INTERFACE FOR NAME AND URL
+

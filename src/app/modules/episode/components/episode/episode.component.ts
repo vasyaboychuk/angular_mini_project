@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAllData, IResults} from "../../inerfaces";
+
+import { IResults} from "../../inerfaces";
+
 
 
 @Component({
@@ -17,8 +19,7 @@ export class EpisodeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  details() {
 
 
-  }
+
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {lastValueFrom} from "rxjs";
+
 import {ICharacterInterface, IResults} from "../../../episode/inerfaces";
 import {CharacterService, EpisodeDetailsService} from "../../services";
-import {lastValueFrom, switchAll, switchMap} from "rxjs";
 
 @Component({
   selector: 'app-episode-details',
@@ -12,7 +13,7 @@ import {lastValueFrom, switchAll, switchMap} from "rxjs";
 export class EpisodeDetailsComponent implements OnInit {
   currentEpisode: IResults;
   characters: ICharacterInterface[];
-  url:string
+
 
   constructor(private activatedRoute:ActivatedRoute,private episodeDetailsService:EpisodeDetailsService,private characterService:CharacterService) {
 

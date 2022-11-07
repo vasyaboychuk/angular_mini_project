@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
-  Router, Resolve,
+  Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
+
 import {IAllData} from "../../inerfaces";
 import {EpisodeService} from "../episode.service";
 

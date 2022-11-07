@@ -1,6 +1,4 @@
-
-<mat-accordion>
-  <div class="wrap">
+<div class="wrap">
     <div class="title">
       <h2>Rick and Mortie episodes</h2>
     </div>
@@ -8,19 +6,10 @@
     <div class="episodes">
       <app-episode *ngFor="let episode of episodes" [episode]="episode"></app-episode>
     </div>
-  </div>
-</mat-accordion>
-
-<!--  <div>-->
-<!--    <mat-paginator-->
-<!--      [length]="totalItem"-->
-<!--      [pageSize]="10"-->
-<!--     aria-label="Select page">-->
-<!--    </mat-paginator>-->
-<!--  </div>-->
-  <mat-paginator [length]="totalItem"
-                 [pageSize]="10"
-                 aria-label="Select page">
-  </mat-paginator>
+</div>
+<mat-paginator [length]="totalItem"
+               [pageSize]='20'
+               aria-label="Select page">
+</mat-paginator>
 
 

@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
   navigate():void {
     this.router.navigate(['episode'])
   }
+
+  navigater():void {
+    this.router.navigate(['characters'])
+  }
 }

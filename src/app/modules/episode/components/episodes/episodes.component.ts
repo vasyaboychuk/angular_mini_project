@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {map} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
+import {MatPaginator} from "@angular/material/paginator";
 
 import {IAllData, IResults} from "../../inerfaces";
-import {ActivatedRoute, Router} from "@angular/router";
-import {map} from "rxjs";
-import {MatPaginator} from "@angular/material/paginator";
 
 
 @Component({
@@ -33,7 +33,7 @@ export class EpisodesComponent implements OnInit ,AfterViewInit{
    this.activatedRoute.data.pipe(
      map(value => value['data']as IAllData)
    ).subscribe(value =>{
-     this.totalItem=value.info.pages
+     this.totalItem=value.info.count
      this.episodes=value.results
    })
   }

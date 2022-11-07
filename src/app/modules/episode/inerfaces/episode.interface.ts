@@ -1,9 +1,4 @@
-export interface IAllData {
-  // id: number,
-  // name: string,
-  // air_date: string,
-  // episode: string,
-  // characters:string[]
+export interface IAllData{
   info: {
     count: number,
     pages: number,
